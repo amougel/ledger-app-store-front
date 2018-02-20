@@ -1,9 +1,9 @@
 import { combineReducers } from "redux";
 
-import u2f from "./u2fReducer";
+import auth from "./authReducer";
 
 const rootReducer = combineReducers({
-  u2f
+  auth
 });
 
 export default rootReducer;

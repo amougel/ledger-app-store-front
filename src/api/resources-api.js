@@ -71,7 +71,7 @@ export const createResource = async (
  * @param {string} type type of resource to delete
  * @param {string} pk primary key identifier for resource
  */
-export const deleteResource = async (token: string, type: string, pk: string): Promise<mixed> => {
+export const deleteResource = async (token: string, type: string, pk: number): Promise<mixed> => {
   try {
     const json = await fetchWithToken(token)(`${BASE_URL}/api/${type}/${pk}`, {
       method: 'DELETE',

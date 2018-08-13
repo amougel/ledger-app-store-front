@@ -88,7 +88,7 @@ class CollapsibleList extends React.Component<Props, State> {
       type: '',
     }))
 
-  delete = (id: number | string): Function => (evt: SyntheticEvent<HTMLButtonElement>): void => {
+  delete = (id: number): Function => (evt: SyntheticEvent<HTMLButtonElement>): void => {
     evt.preventDefault()
     const { deleteResource } = this.props
     const { type } = this.state

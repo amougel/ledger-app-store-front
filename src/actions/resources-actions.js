@@ -166,7 +166,7 @@ export const updateResource = (
   }
 }
 
-export const deleteResource = (type: string, pk: string): Function => async (
+export const deleteResource = (type: string, pk: number): Function => async (
   dispatch: Function,
   getState: Function,
 ): Promise<void> => {

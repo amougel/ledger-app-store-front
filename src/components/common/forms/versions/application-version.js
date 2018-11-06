@@ -60,6 +60,13 @@ const ApplicationVersion = ({
   initFields,
 }: Props): React.Node => {
   const init = cleanMerge(baseFields, initFields)
+  const applicationsSorted = applications.sort((a, b) => {
+    const nameA = a.name.toLowerCase()
+    const nameB = b.name.toLowerCase()
+    if (nameA < nameB) return -1
+    if (nameA > nameB) return 1
+    return 0
+  })
   return (
     <React.Fragment>
       <Form type="application_versions" initFields={init} method={method} success={success}>
@@ -85,7 +92,7 @@ const ApplicationVersion = ({
               }}
               className="input"
             >
-              {applications.map(app => (
+              {applicationsSorted.map(app => (
                 <MenuItem key={app.id} value={app.id}>
                   {app.name}
                 </MenuItem>

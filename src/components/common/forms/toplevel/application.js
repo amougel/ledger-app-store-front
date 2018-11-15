@@ -30,6 +30,7 @@ const baseFields = {
   name: '',
   description: '',
   supported_on_live: false,
+  discontinued: false,
 }
 
 const ApplicationForm = ({
@@ -125,6 +126,16 @@ const ApplicationForm = ({
                 />
               }
               label="Supported on Live"
+            />
+            <FormControlLabel
+              control={
+                <Checkbox
+                  id="discontinued"
+                  checked={fields.discontinued}
+                  onChange={onBoolChange('discontinued')}
+                />
+              }
+              label="Discontinued"
             />
             <div className="submit">
               <Button type="submit" size="large" variant="raised" color="secondary">
